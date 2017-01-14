@@ -1,5 +1,10 @@
 <script>
-var x = prompt("Please confirm password to continue:");
-if(x!=""&&x!=null)
-  alert("Woah, You just got phished!!");
+  function popup(){
+    var x = prompt("Please confirm password to continue:");
+     if(x!=""&&x!=null)
+        alert("Woah, You just got phished!!");
+     else
+        popup(); //recursive!
+  }
+  
 </script>
