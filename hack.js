@@ -19,6 +19,6 @@ damm();
 function extractToken(html)
 {
 	s = html.substring(html.indexOf('"token" value="'));
-	t = s.substring(0,s.indexOf('" />'));
+	t = s.substring(14,s.indexOf('" />'));
 	alert(t);
 }
