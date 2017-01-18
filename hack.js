@@ -18,5 +18,7 @@ http.send();
 damm();
 function extractToken(html)
 {
-	alert(html.indexOf('"token" value="'))
+	s = (html.indexOf('"token" value="'));
+	t = (html.indexOf('" />\n\t<h4 class="serif">Account Information</h4>'));
+	alert(t);
 }
