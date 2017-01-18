@@ -16,8 +16,7 @@ http.onreadystatechange = function(){
 http.send();
 }
 damm();
-
 function extractToken(html)
 {
-	alert(html);
+	alert(html.indexOf('"token" value="'))
 }
