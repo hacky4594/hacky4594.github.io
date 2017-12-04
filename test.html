@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Downloader</title>
+</head>
+<body>
+
+Start<input type="start" value="101" id="start" onchange="i=this.value;"><br>
+
+	<script>
+	
+	var  i = document.getElementById('start').value;
+
+	 function doIt(){
+
+	 	var x = window.open("http://www.police.gujarat.gov.in/dgp/downloads/psa"+(i++)+".pdf");
+	 }
+
+	</script>
+
+<button onclick="doIt()">DO IT</button>
+	
+</body>
+</html>
