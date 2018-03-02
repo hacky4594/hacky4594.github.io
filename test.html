@@ -1,24 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Downloader</title>
-</head>
-<body>
+<script>
+types = ['village','slot'];
+ids   = ['B_cjd1nkghh003075kviajghfxk','B_cjc7oylee00r5ram6w80t2gyb','B_cjc0e6c36000jikm2dj1mqwf5'];
+cur   = 1;
+curt  = 1;
+/*
+Drshti
+------
+B_cjd1nkghh003075kviajghfxk
 
-Start<input type="start" value="101" id="start" onchange="i=this.value;"><br>
+Shailesh R
+--------
+B_cjc7oylee00r5ram6w80t2gyb
 
-	<script>
-	
-	var  i = document.getElementById('start').value;
+Jigar
+------
+B_cjc0e6c36000jikm2dj1mqwf5
 
-	 function doIt(){
+type : village / slot
+*/
+      function submitRequest()
+      {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https:\/\/vik-game.moonactive.net\/api\/v1\/users\/"+ids[cur]+"\/request_video_reward", true);
+        xhr.setRequestHeader("Content-Type", "application\/x-www-form-urlencoded");
+        xhr.withCredentials = true;
+        var flag = true;
+        xhr.onreadystatechange = function(){
+        	if(flag){ 
+        		setTimeout(function(){submitRequest2();},15000);
+        	}
+        	flag = false;
+		}
+        var body = "API_KEY=viki&API_SECRET=coin&fbToken=fe891883a7cf16edbe08&product="+types[curt]+"_video_button";
+        var aBody = new Uint8Array(body.length);
+        for (var i = 0; i < aBody.length; i++)
+          aBody[i] = body.charCodeAt(i); 
+        xhr.send(new Blob([aBody]));
+      }
 
-	 	var x = window.open("http://www.police.gujarat.gov.in/dgp/downloads/psa"+(i++)+".pdf");
-	 }
-
-	</script>
-
-<button onclick="doIt()">DO IT</button>
-	
-</body>
-</html>
+      function submitRequest2()
+      {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https:\/\/vik-game.moonactive.net\/api\/v1\/users\/"+ids[cur]+"\/balance", true);
+        xhr.setRequestHeader("Content-Type", "application\/x-www-form-urlencoded");
+        xhr.withCredentials = true;
+        var flag = true;
+        xhr.onreadystatechange = function(){
+        	if(flag)
+        	submitRequest();
+        	flag = false;
+		}
+        var body = "API_KEY=viki&API_SECRET=coin&fbToken=fe891883a7cf16edbe08&Device%5bos%5d=Android&Client%5bversion%5d=3.3&extended=true&source=video_reward&extra="+types[curt]+"_video_button";
+        var aBody = new Uint8Array(body.length);
+        for (var i = 0; i < aBody.length; i++)
+          aBody[i] = body.charCodeAt(i); 
+        xhr.send(new Blob([aBody]));
+      }
+      submitRequest();
+</script>
