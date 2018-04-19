@@ -12,7 +12,7 @@ http.open("GET","https://www.dreamland.be/e/ClickInfo?URL=https://www.dreamland.
 http.setRequestHeader("Content-Type","text/plain");
 http.withCredentials = "true";
 http.onreadystatechange = function(){
-		alert(http.response);
+		alert(http.responseText);
 	if(http.readystate == 4){
 	}
 }
