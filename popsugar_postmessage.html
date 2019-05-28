@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Parent Window</title>
+</head>
+<body>
+
+    <h1>Parent Window</h1>
+    <p>Send Message: <button id="message_button">Hi there iframe</button></p>
+    <p>Got Message:</p>
+    <div id="results"></div>
+    <br/>
+
+    <script>
+        // addEventListener support for IE8
+        function bindEvent(element, eventName, eventHandler) {
+            if (element.addEventListener){
+                element.addEventListener(eventName, eventHandler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + eventName, eventHandler);
+            }
+        }
+        var iframeSource = window.open('https://secure.onsugar.com/u/login?destination=https%3A%2F%2Fwww.popsugar.com%2F&site=popsugar');
+        // Listen to message from child window
+        bindEvent(window, 'message', function (e) {
+            results.innerHTML = e.data;
+        });
+    </script>
+</body>
+</html>
