@@ -21,7 +21,7 @@
                 element.attachEvent('on' + eventName, eventHandler);
             }
         }
-        var iframeSource = window.open('https://secure.onsugar.com/u/login?destination=https%3A%2F%2Fwww.popsugar.com%2F&site=popsugar');
+        var iframeSource = window.open('https://secure.onsugar.com/u/login?destination=https%3A%2F%2Fwww.popsugar.com%2F&site=popsugar','name','height=200,width=150');
         // Listen to message from child window
         bindEvent(window, 'message', function (e) {
             results.innerHTML = e.data;
