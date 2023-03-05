@@ -7,7 +7,7 @@
 <body>
 
     <h1>Parent Window</h1>
-    <p>Send Message: <button id="message_button">Hi there iframe</button></p>
+    <p>Send Message: <button onclick="sendMsg();" id="message_button">Hi there iframe</button></p>
     <p>Got Message:</p>
     <div id="results"></div>
     <br/>
@@ -21,7 +21,10 @@
                 element.attachEvent('on' + eventName, eventHandler);
             }
         }
-        var iframeSource = window.open('/child.html');
+        var iframeSource = null;
+        function sendMsg(){
+            iframeSource = window.open('/child.html');
+        }
         // Listen to message from child window
         bindEvent(window, 'message', function (e) {
             results.innerHTML = e.data;
