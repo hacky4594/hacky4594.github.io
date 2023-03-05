@@ -13,16 +13,14 @@
     <br/>
 
     <script>
-        // addEventListener support for IE8
         window.addEventListener(
           "message",
           function (event) {
             alert(event.data);
           },
-          false);        
-        var iframeSource = null;
+          false);         
         function sendMsg(){
-            iframeSource = window.open('/child.html','test','height=200,width=150');
+            window.open('/child.html','test','height=200,width=150');
         }
         // Listen to message from child window
     </script>
