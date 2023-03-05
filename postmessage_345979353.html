@@ -8,7 +8,6 @@
 
     <h1>Parent Window</h1>
     <p>Send Message: <button onclick="sendMsg();" id="message_button">Hi there iframe</button></p>
-    <iframe src="https://www.shutterfly.com/nonVisualSignin/start.sfly?&cb=0.36430869944319966&esch=1&subdomain=https://hacky4594.github.io\x23&outputFormat=postMessage&version=2"></iframe>
     <p>Got Message:</p>
     <div id="results"></div>
     <br/>
@@ -23,7 +22,7 @@
           false);        
         var iframeSource = null;
         function sendMsg(){
-            iframeSource = window.open('/child.html');
+            iframeSource = window.open('/child.html','test','height=200,width=150');
         }
         // Listen to message from child window
     </script>
