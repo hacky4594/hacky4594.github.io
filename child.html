@@ -1,4 +1,7 @@
+<button onclick="send();">SEND MSG</button>
 <script>
+        function send(){
         window.parent.postMessage("LOL", "https://hacky4594.github.io");
-        alert("MSG SENT to "+window.parent.location)
+        alert("MSG SENT to "+window.parent.location);
+        }
 </script>
