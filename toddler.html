@@ -5,7 +5,7 @@
     <style>
 .grid-container {
   display: grid;
-  gap: 50px;
+  gap: 10px;
   grid-template-columns: auto auto auto;
   background-color: #2196F3;
   padding: 10px;
@@ -14,23 +14,59 @@
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 .grid-item img{
   width: 100%;
+  height: 100%;
 }
     </style>
   </head>
     <body>
-<div class="grid-container">
-        <div class="grid-item"><img src="https://img.freepik.com/premium-photo/red-apple-with-green-leaf-isolated-white_80510-518.jpg"></div>
-           <div class="grid-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/800px-Banana-Single.jpg"></div>
-        <div class="grid-item"><img src="https://cdn.dribbble.com/users/5296693/screenshots/14534546/media/2c6f3b3367c10e46124a0b052b991ddd.jpg?compress=1&resize=400x300"></div>
-           <div class="grid-item"><img src="https://media.istockphoto.com/id/474468639/photo/peafowl.jpg?s=612x612&w=0&k=20&c=mY1RF-utXh6gL1hnm2ULLxeRFLRfKXHQRyKMa1RwaHI="></div>
-        <div class="grid-item"><img src="https://thumbs.dreamstime.com/b/cute-cat-white-background-lovely-pet-cute-cat-white-background-124435681.jpg"></div>
-           <div class="grid-item"><img src="https://static.vecteezy.com/system/resources/previews/010/824/982/original/brown-dog-sitting-on-a-white-background-free-photo.jpg"></div>
-      </table>
+      <div>
+<audio id="dog">
+  <source src="https://hacky4594.github.io/dog.ogg" type="audio/ogg">
+</audio>
+</div>
+
+
+<div id="container" class="grid-container">
+  </div>
+
+  <script type="text/javascript">
+
+    function shuffle(sourceArray) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+        var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+        var temp = sourceArray[j];
+        sourceArray[j] = sourceArray[i];
+        sourceArray[i] = temp;
+    }
+    return sourceArray;
+    }
+
+    function play(name){
+      document.getElementById(name).play();
+    }
+    
+    let text =  '[{"name":"apple","image":"https://img.freepik.com/premium-photo/red-apple-with-green-leaf-isolated-white_80510-518.jpg","sound":"/audio.wav"},'+
+                '{"name":"banana","image":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/800px-Banana-Single.jpg","sound":"/audio.wav"},'+
+                '{"name":"doreamon","image":"https://cdn.dribbble.com/users/5296693/screenshots/14534546/media/2c6f3b3367c10e46124a0b052b991ddd.jpg?compress=1&resize=400x300","sound":"/audio.wav"},'+
+                '{"name":"peacock","image":"https://media.istockphoto.com/id/474468639/photo/peafowl.jpg?s=612x612&w=0&k=20&c=mY1RF-utXh6gL1hnm2ULLxeRFLRfKXHQRyKMa1RwaHI=","sound":"/audio.wav"},'+
+                '{"name":"cat","image":"https://thumbs.dreamstime.com/b/cute-cat-white-background-lovely-pet-cute-cat-white-background-124435681.jpg","sound":"/audio.wav"},'+
+                '{"name":"dog","image":"https://static.vecteezy.com/system/resources/previews/010/824/982/original/brown-dog-sitting-on-a-white-background-free-photo.jpg","sound":"/audio.wav"}'+
+                 ']';
+    pics = JSON.parse(text);
+    pics = shuffle(pics);
+
+    container = document.getElementById("container");
+
+    for(i=0;i<pics.length;i++){
+      container.innerHTML+='<div class="grid-item"><img onclick="play(\''+pics[i].name+'\')" src="'+pics[i].image+'"></div>';
+    }
+
+  </script>
     </body>
   </html>
