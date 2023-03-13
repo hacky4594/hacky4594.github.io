@@ -21,15 +21,15 @@
   width: 100%;
   height: 100%;
 }
-    </style>
+#audio_div{
+  display:none;
+}
+
+  </style>
   </head>
     <body>
-      <div>
-<audio id="dog">
-  <source src="https://hacky4594.github.io/dog.ogg" type="audio/ogg">
-</audio>
-</div>
 
+      <div id="audio_div"></div>
 
 <div id="container" class="grid-container">
   </div>
@@ -62,9 +62,11 @@
     pics = shuffle(pics);
 
     container = document.getElementById("container");
+    audio_div = document.getElementById("audio_div");
 
     for(i=0;i<pics.length;i++){
       container.innerHTML+='<div class="grid-item"><img onclick="play(\''+pics[i].name+'\')" src="'+pics[i].image+'"></div>';
+      audio_div.innerHTML+='<audio id="'+pics[i].name+'"><source src="https://hacky4594.github.io/'+pics[i].name+'.ogg" type="audio/ogg"></audio>';
     }
 
   </script>
