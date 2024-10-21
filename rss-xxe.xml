@@ -1,9 +1,8 @@
 <!--?xml version="1.0" ?-->
-<!DOCTYPE replace [<!ENTITY example "TEST123"> ]>
 <rss version="2.0">
         <channel>
 
-                <title>Example &example; Feed</title>
+                <title>Example x Feed</title>
                 <description>Insert witty or insightful remark here</description>
                 <link>http://example.org/</link>
                 <lastBuildDate>Sat, 13 Dec 2003 18:30:02 GMT</lastBuildDate>
