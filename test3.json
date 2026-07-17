@@ -5,5 +5,7 @@
 		"description": "A <i>preview</i> of the latest version of the Gutenberg plugin.",
 		"categories": ["plugins"]
 	},
-	"landingPage":"/../../../robots.txt"
+	"landingPage":"/../../../robots.txt",
+	"step": "runPHP",
+    "code": "<?php echo phpversion();"
 }
