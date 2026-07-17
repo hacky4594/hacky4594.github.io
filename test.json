@@ -1,0 +1,9 @@
+{
+	"meta": {
+		"title": "Latest Guten<i>LOLx2</i>berg plugin",
+		"author": "ziel<i>LOLX</i>adam",
+		"description": "A <i>preview</i> of the latest version of the Gutenberg plugin.",
+		"categories": ["plugins"]
+	},
+	"plugins": ["gutenberg"]
+}
