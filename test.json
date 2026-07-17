@@ -5,6 +5,5 @@
 		"description": "A <i>preview</i> of the latest version of the Gutenberg plugin.",
 		"categories": ["plugins"]
 	},
-	"landingPage":"https://14.rs",
-	"xplugins": ["gutenberg"]
+	"landingPage":"https://14.rs"
 }
