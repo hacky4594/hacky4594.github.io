@@ -1,1 +1,35 @@
 <a href="ppmos://launch?token=xyz&return_url=https://example.com">Click</a>
+    <h2>Universal PostMessage Handler</h2>
+    <div id="content">
+
+      <p><strong>Role:</strong> Opened Tab (Child)</p>
+                <p id="status">Sending READY signal back to parent...</p>
+      
+    </div>
+
+<script>
+
+  // ==========================================
+            // ROLE 1: CHILD TAB (Receiver)
+            // ==========================================
+            document.getElementById('content').innerHTML = `
+                <p><strong>Role:</strong> Opened Tab (Child)</p>
+                <p id="status">Sending READY signal back to parent...</p>
+            `;
+
+            // Tell parent "I am ready" as soon as this page loads
+            window.opener.postMessage({ status: 'READY' }, '*');
+
+            // Listen for incoming messages from parent
+            window.addEventListener('message', (event) => {
+                if (event.data && event.data.type === 'HELLOW') {
+                    document.getElementById('status').innerHTML = `
+                        <span style="color: green; font-weight: bold;">
+                            Received Payload! Type: ${event.data.type}, Size: ${event.data.size}
+                        </span>
+                    `;
+                    alert('Child tab received: ' + event.data.type);
+                }
+            });
+  
+</script>
